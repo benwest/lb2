@@ -1,0 +1,106 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.project-open body {
+    overflow: scroll;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+}
+
+@media ( min-width: 768px ) {
+    nav {
+        font-size: 2em;
+    }
+}
+
+nav.title {
+    pointer-events: none;
+}
+
+.project-open nav.menu {
+    top: auto;
+    bottom: 0;
+}
+
+nav a {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 33.33%;
+    transition: opacity .35s;
+}
+
+nav a > * {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.thumbnails {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    transform: translate(-33.3%, -33.3%);
+    pointer-events: none;
+}
+
+.thumbnail {
+    float: left;
+    width: 33.33%;
+    height: 33.33%;
+    background-size: contain;
+    transform: scale( .7, .7 );
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform .2s;
+}
+
+main {
+    display: none;
+    padding-bottom: 100vh;
+}
+
+.project-open main {
+    display: block;
+}
+
+.scroll-down {
+    cursor: s-resize;
+    height: 100vh;
+}
+
+.container {
+    background: #ddd;
+    min-height: 100vh;
+}
+
+.vh {
+    position: fixed;
+    bottom: 0;
+}
